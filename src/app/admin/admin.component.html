@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <h2>Dashboard</h2>
+        <div class="row card-container">
+            <div class="col-md-4">
+                <div class="card">
+                    <h6>Total Users</h6>
+                    <p>{{noOfUsers}}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h6>Total Tasks</h6>
+                    <p>{{noOfTasks}}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h6>Recent Activity</h6>
+                    <div class="card">
+                        <div *ngFor="let item of activityArray | slice:-3">
+                            <p>{{item.activity}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-user-management></app-user-management>

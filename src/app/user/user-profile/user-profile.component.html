@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <!-- Profile Information Form -->
+        <div class="col-md-6">
+            <h2>Profile Information</h2>
+            <form [formGroup]="profileForm" (ngSubmit)="updateUser()">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Your First Name" formControlName="firstName">
+                    <div *ngIf="profileForm.get('firstName')?.invalid && profileForm.get('firstName')?.touched">
+                        <small *ngIf="profileForm.get('firstName')?.errors?.['required']">First Name is required</small>
+                        <small *ngIf="profileForm.get('firstName')?.errors?.['pattern']">First Name can only contain alphabets</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Your Last Name" formControlName="lastName">
+                    <div *ngIf="profileForm.get('lastName')?.invalid && profileForm.get('lastName')?.touched">
+                        <small *ngIf="profileForm.get('lastName')?.errors?.['required']">Last Name is required</small>
+                        <small *ngIf="profileForm.get('lastName')?.errors?.['pattern']">Last Name can only contain alphabets</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Your Email" formControlName="email">
+                    <div *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">
+                        <small *ngIf="profileForm.get('email')?.errors?.['required']">Email is required</small>
+                        <small *ngIf="profileForm.get('email')?.errors?.['pattern']">Invalid Email Address</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" placeholder="Enter Your Phone Number" formControlName="phoneNumber">
+                    <div *ngIf="profileForm.get('phoneNumber')?.invalid && profileForm.get('phoneNumber')?.touched">
+                        <small *ngIf="profileForm.get('phoneNumber')?.errors?.['pattern']">Invalid Phone Number</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea type="text" class="form-control" placeholder="Enter Your Address" formControlName="address"></textarea>
+                </div>
+                <button type="submit" [disabled]="profileForm.invalid" class="btn btn-success">Save</button>
+                <br>
+                <button type="button" (click)="deleteUser()" class="btn btn-danger mt-2">Delete Account</button>
+            </form>
+        </div>
+
+        <!-- Change Password Form -->
+        <div class="col-md-6">
+            <h2>Change Password</h2>
+            <form [formGroup]="changePasswordForm" (ngSubmit)="updatePassword()">
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Your Current Password" formControlName="currentPassword"
+                    [class.ng-invalid]="changePasswordForm.get('currentPassword')?.invalid && changePasswordForm.get('currentPassword')?.touched"
+                    (input)="checkCurrentPassword()" [class.ng-invalid]="!currentPasswordMatch">
+                    <span *ngIf="!currentPasswordMatch" class="error">
+                        Password does not match current password
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Your New Password" formControlName="newPassword" (input)="checkPassword()" [class.ng-invalid]="!passwordMatch">
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Confirm New Password</label>
+                    <input type="password" class="form-control" placeholder="Confirm Your New Password" formControlName="confirmNewPassword" (input)="checkPassword()" [class.ng-invalid]="!passwordMatch">
+                </div>
+                <span *ngIf="!passwordMatch" class="error">
+                    Passwords do not match
+                </span>
+                <br>
+
+                <button type="submit" [disabled]="changePasswordForm.invalid" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

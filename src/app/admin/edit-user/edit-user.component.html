@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Edit User</h2>
+            <form [formGroup]="profileForm" (ngSubmit)="updateUser()">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Your First Name" formControlName="firstName">
+                    <div *ngIf="profileForm.get('firstName')?.invalid && profileForm.get('firstName')?.touched">
+                        <small *ngIf="profileForm.get('firstName')?.errors?.['required']">First Name is required</small>
+                        <small *ngIf="profileForm.get('firstName')?.errors?.['pattern']">Invalid Format</small>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Your Last Name" formControlName="lastName">
+                    <div *ngIf="profileForm.get('lastName')?.invalid && profileForm.get('lastName')?.touched">
+                        <small *ngIf="profileForm.get('lastName')?.errors?.['required']">Last Name is required</small>
+                        <small *ngIf="profileForm.get('lastName')?.errors?.['pattern']">Invalid Format</small>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Your Email" formControlName="email">
+                    <div *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">
+                        <small *ngIf="profileForm.get('email')?.errors?.['required']">Email is required</small>
+                        <small *ngIf="profileForm.get('email')?.errors?.['pattern']">Invalid Email Address</small>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" placeholder="Enter Your Phone Number" formControlName="phoneNumber">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea type="text" class="form-control" placeholder="Enter Your Address" formControlName="address"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success" [disabled]="profileForm.invalid">Save</button>
+                <br>
+                <button type="button" (click)="deleteUser()" class="btn btn-danger mt-2">Delete Account</button>
+            </form>
+        </div>
+    </div>
+</div>

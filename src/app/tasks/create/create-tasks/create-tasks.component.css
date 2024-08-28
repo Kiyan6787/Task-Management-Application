@@ -1,0 +1,16 @@
+input.ng-invalid {
+    border-color: red;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+button {
+    margin-bottom: 12px;
+}
+
+h2 {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}

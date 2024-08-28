@@ -1,0 +1,187 @@
+{
+  "users": [
+    {
+      "id": "8ada",
+      "firstName": "Zoro",
+      "lastName": "Roronoa",
+      "email": "zoro@gmail.com",
+      "password": "Swords",
+      "role": "user",
+      "phoneNumber": "0714512890",
+      "address": "Shimotsuki Village"
+    },
+    {
+      "id": "240c",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "email": "admin@tasks.com",
+      "password": "Admin",
+      "role": "admin"
+    },
+    {
+      "id": "3f0c",
+      "firstName": "Kiyan",
+      "lastName": "Ramjanum",
+      "email": "kiyan@gmail.com",
+      "password": "Test1",
+      "role": "user",
+      "phoneNumber": "0714510287",
+      "address": "322 Greenstone Crest"
+    },
+    {
+      "id": "4e15",
+      "firstName": "John",
+      "lastName": "Jones",
+      "email": "john@gmail.com",
+      "password": "Test1!",
+      "role": "user",
+      "phoneNumber": "0714512897",
+      "address": "Here or there"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "d011",
+      "taskName": "Complete Angular",
+      "description": "Finish assignment",
+      "dueDate": "2024-07-26",
+      "priority": "Medium",
+      "userId": "8ada"
+    },
+    {
+      "id": "2122",
+      "taskName": "Wash Car",
+      "description": "Take car for a wash",
+      "dueDate": "2024-07-19",
+      "priority": "Low",
+      "userId": "3f0c"
+    },
+    {
+      "id": "636e",
+      "taskName": "Do Chores",
+      "description": "Do some chores",
+      "dueDate": "2024-07-26",
+      "priority": "Medium",
+      "userId": "3f0c"
+    },
+    {
+      "id": "7057",
+      "taskName": "Rrr",
+      "description": "Zzz",
+      "dueDate": "2024-07-25",
+      "priority": "High",
+      "userId": "8ada",
+      "email": "zoro@gmail.com"
+    },
+    {
+      "id": "49e5",
+      "taskName": "Test",
+      "description": "bdqiqe",
+      "dueDate": "2024-08-10",
+      "priority": "Low",
+      "userId": "8ada"
+    },
+    {
+      "id": "3ade",
+      "taskName": "Johns Task",
+      "description": "JTE",
+      "dueDate": "2024-08-08",
+      "priority": "Medium",
+      "userId": "4e15"
+    },
+    {
+      "id": "59ba",
+      "taskName": "Upload",
+      "description": "Upload to Netlify",
+      "dueDate": "2024-09-07",
+      "priority": "High",
+      "userId": "4e15"
+    }
+  ],
+  "activities": [
+    {
+      "id": "e471",
+      "activity": "Task update"
+    },
+    {
+      "id": "adc1",
+      "activity": "Task created"
+    },
+    {
+      "id": "2905",
+      "activity": "Task deleted"
+    },
+    {
+      "id": "6a18",
+      "activity": "Task created"
+    },
+    {
+      "id": "b04e",
+      "activity": "Task created"
+    },
+    {
+      "id": "fd2d",
+      "activity": "Task created"
+    },
+    {
+      "id": "f591",
+      "activity": "Task created"
+    },
+    {
+      "id": "b2c4",
+      "activity": "Task created"
+    },
+    {
+      "id": "64af",
+      "activity": "Task deleted"
+    },
+    {
+      "id": "1683",
+      "activity": "Task created"
+    },
+    {
+      "id": "d8ff",
+      "activity": "Task update"
+    },
+    {
+      "id": "933f",
+      "activity": "Task update"
+    },
+    {
+      "id": "68ee",
+      "activity": "Task created"
+    },
+    {
+      "id": "64af",
+      "activity": "Task update"
+    },
+    {
+      "id": "1471",
+      "activity": "Task created"
+    },
+    {
+      "id": "13b4",
+      "activity": "Task update"
+    },
+    {
+      "id": "9c85",
+      "activity": "Task created"
+    },
+    {
+      "id": "e6b1",
+      "activity": "Task created"
+    },
+    {
+      "id": "7cae",
+      "activity": "Task deleted"
+    },
+    {
+      "id": "a590",
+      "activity": "Task created"
+    },
+    {
+      "id": "45ca",
+      "activity": "Task deleted"
+    }
+  ]
+}

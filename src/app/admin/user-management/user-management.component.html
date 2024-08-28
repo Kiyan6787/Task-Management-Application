@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <h2>User Management</h2>
+    </div>
+    <div class="row" *ngIf="userArray.length > 0; else noTasks">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of paginatedUsers">
+                    <td>{{item.firstName}}  {{item.lastName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.role}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary actionBtn" [routerLink]="['/admin/edit-user',item.id]">Edit</button>
+                        <button type="button" (click)="deleteUser(item.id)" class="btn btn-danger actionBtn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    <ng-template #noTasks>
+        <div class="row">
+            <div class="col">
+                <p>No Users Yet</p>
+            </div>
+        </div>
+    </ng-template>
+    <mat-paginator [length]="totalUsers" [pageSize]="pageSize" [pageSizeOptions]="[1,3, 5, 10]" (page)="handlePageEvent($event)">
+    </mat-paginator>
+</div>

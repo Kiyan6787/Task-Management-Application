@@ -1,0 +1,16 @@
+.actionBtn{
+    margin-right: 10px;
+}
+
+.sortBtn{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.addBtn {
+    margin-bottom: 10px;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}

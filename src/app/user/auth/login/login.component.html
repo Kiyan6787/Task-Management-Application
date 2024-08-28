@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <h2>Login</h2>
+        <hr/>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="form-group mt-2">
+                    <label for="email">Email</label>
+                    <input type="email" formControlName="loginEmail" class="form-control" placeholder="Enter Email Address"
+                    [class.ng-invalid]="loginForm.get('loginEmail')?.invalid && loginForm.get('loginEmail')?.touched">
+                    <div *ngIf="loginForm.get('loginEmail')?.invalid && loginForm.get('loginEmail')?.touched">
+                        <small *ngIf="loginForm.get('loginEmail')?.errors?.['required']">Email is required</small>
+                        <small *ngIf="loginForm.get('loginEmail')?.errors?.['pattern']">Invalid Email Format</small>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="loginPassword" class="form-control" placeholder="Enter Password"
+                    [class.ng-invalid]="loginForm.get('loginPassword')?.invalid && loginForm.get('loginPassword')?.touched">
+                </div>
+                <span *ngIf="errMessage" class="error">{{errMessage}}</span>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

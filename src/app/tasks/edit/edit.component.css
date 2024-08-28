@@ -1,0 +1,20 @@
+input,select {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+button {
+    margin-bottom: 12px;
+}
+
+h2 {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+input.ng-invalid {
+    border-color: red;
+  }

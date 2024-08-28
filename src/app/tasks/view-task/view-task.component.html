@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <h2>View Task</h2>
+    </div>
+    <div class="card">
+        <h5><strong>{{taskName}}</strong></h5>
+        <p>{{description}}</p>
+        <p>Due Date: {{dueDate}}</p>
+        <p>Priority: {{priority}}</p>
+        <div>
+            <button class="btn btn-success" (click)="navigateToEdit()">Edit</button>
+            <button class="btn btn-danger" (click)="deleteTask()">Delete</button>
+        </div>
+    </div>
+    <a (click)="backToList()">Back to Task List</a>
+</div>
